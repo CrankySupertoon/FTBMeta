@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{.CommonData.Title}}</title>
+</head>
+<body>
+
+<h1>{{.Pack.Pack.Name}}</h1>
+{{.Pack.Pack.Description | renderMarkdown}}
+
+<h2>Versions</h2>
+<ul>
+    {{range $version := .Pack.Versions}}
+        <li><a href="/pack/{{$.Pack.Slug}}/version/{{$version.Slug}}/">{{$version.Version.Name}}</a> ID: {{$version.Version.ID}}</li>
+    {{end}}
+</ul>
+
+</body>
+</html>
