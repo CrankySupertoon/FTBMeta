@@ -1,0 +1,3 @@
+[submodule "ftbweb"]
+	path = ftbweb
+	url = https://git.sr.ht/~jmansfield/ftbweb
