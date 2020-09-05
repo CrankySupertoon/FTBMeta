@@ -1,0 +1,6 @@
+## IDE
+.idea
+
+## ftbweb build
+bin/
+build/
