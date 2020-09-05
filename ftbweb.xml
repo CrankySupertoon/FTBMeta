@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+
+    <site>
+        <builddir>build</builddir>
+        <url>http://127.0.0.1:3000/</url>
+    </site>
+
+    <crawler>
+        <apiroot>https://api.modpacks.ch/</apiroot>
+    </crawler>
+
+</config>
