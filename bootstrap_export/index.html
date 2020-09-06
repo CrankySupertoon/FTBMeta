@@ -27,12 +27,31 @@
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12" style="padding: 28px;"><input class="form-control-plaintext" type="text" value="GO MODPACK LISTING" readonly=""></div>
+                <div class="col-md-12" style="padding: 28px;"><div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="padding: 28px;">
+
+                <head>
+                    <meta charset="utf-8">
+                    <title>{{.CommonData.Title}}</title>
+                </head>
+
+                <body>
+
+                    <ul>
+                        {{range $pack := .Packs}}
+                        <li><a href="/pack/{{$pack.Slug}}/">{{$pack.Pack.Name}} </a> ID: {{$pack.Pack.ID}}</li>
+                        {{end}}
+                    </ul>
+
+                </body>
             </div>
         </div>
     </div>
-    <div class="footer-clean">
-        <footer></footer>
+</div></div>
+            </div>
+        </div>
     </div>
     <footer class="page-footer gradient">
         <header></header>
