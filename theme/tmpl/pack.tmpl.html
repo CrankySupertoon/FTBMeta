@@ -18,12 +18,37 @@
             <div
                 class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="pack.html">Home</a></li>
+                    <li class="nav-item" role="presentation"></li>
                 </ul>
         </div>
         </div>
     </nav>
     <main class="page lanidng-page"></main>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xl-2 offset-xl-0" style="padding: 16px;width: 160px;"><img src="{{.Pack.Pack.GetIcon.URL}}" alt="{{.Pack.Pack.Name}} Logo" width="128" height="128"></div>
+                <div class="col-md-6 col-lg-10 col-xl-6 offset-xl-0 text-left" style="padding: 8px;padding-right: -50%;padding-left: 0px;"><h1>{{.Pack.Pack.Name}}</h1>
+<h4>{{.Pack.Pack.Synopsis}}</h4>
+</div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xl-8 offset-xl-0">{{.Pack.Pack.Description | renderMarkdown}}</div>
+                <div class="col-md-6 col-xl-4 offset-xl-0">
+                    <h4 style="margin-bottom: -20px;">About This Project<br><br></h4><h6>Project ID: {{.Pack.Pack.ID}}</h6>
+<h6>Created:  temp</h6>
+<h6>Last Released File: {{.Pack.Pack.Updated}}</h6><!-- | creationDate}}</h6>-->
+<h6>Total Downloads: {{.Pack.Pack.Installs | humaniseInt}}</h6>
+<h6>Launches: {{.Pack.Pack.Plays | humaniseInt}}</h6>
+</div>
+            </div>
+        </div>
+    </div>
     <div>
         <div class="container">
             <div class="row">
@@ -35,7 +60,6 @@
 </head>
 <body>
 
-<h1>{{.Pack.Pack.Name}}</h1>
 {{.Pack.Pack.Description | renderMarkdown}}
 
 <h2>Versions</h2>
