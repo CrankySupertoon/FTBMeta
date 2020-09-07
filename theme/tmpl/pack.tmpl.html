@@ -42,7 +42,8 @@
     <div></div>
     <div>
         <div class="container">
-            <div class="row"><div class="p-5 bg-white rounded shadow mb-5">
+            <div class="row">
+                <div class="col-md-12"><div class="p-5 bg-white rounded shadow mb-5">
     <!-- Rounded tabs -->
     <ul id="myTab" role="tablist"
         class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
@@ -64,14 +65,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-xl-8 offset-xl-0">
-                        <h4 style="margin-bottom: -20px;">Description<br /><br /></h4>
+                        <h4 style="margin-bottom: -20px;"><strong>Description</strong><br /><br /></h4>
                         <div>{{.Pack.Pack.Description | renderMarkdown}}</div>
                     </div>
                     <div class="col-md-6 col-xl-4 offset-xl-0">
-                        <h4 style="margin-bottom: -20px;">About This Project<br /><br /></h4>
+                        <h4 style="margin-bottom: -20px;"><strong>About This Project</strong><br /><br /></h4>
                         <div>
                             <h6>Project ID: {{.Pack.Pack.ID}}</h6>
-                            <h6>Created: temp</h6>
+                            <h6>Created: 1 Jan 1970</h6>
                             <h6>Last Released File: {{.Pack.Pack.Updated | standardDate}}</h6>
                             <h6>Total Downloads: {{.Pack.Pack.Installs | humaniseInt}}</h6>
                             <h6>Launches: {{.Pack.Pack.Plays | humaniseInt}}</h6>
@@ -82,24 +83,29 @@
         </div>
         <div id="files" role="tabpanel" aria-labelledby="files-tab" class="tab-pane fade px-4 py-5">
             <div class="container">
-            <ul>
                 <ul>
-                    {{range $version := .Pack.Versions}}
-                    <li>
-                        <a href="/pack/{{ $.Pack.Slug }}/version/{{$version.Slug}}/">{{$version.Version.Name}}</a>
-                    </li>
-                    {{end}}
+                    <ul>
+                        {{range $version := .Pack.Versions}}
+                            <h2>
+                            <a href="/pack/{{ $.Pack.Slug }}/version/{{$version.Slug}}/">{{$version.Version.Name}}</a>
+                                </h2>
+                        {{end}}
+                    </ul>
                 </ul>
-            </ul>
+            </div>
+        </div>
+        <div id="mod" role="tabpanel" aria-labelledby="mod-tab" class="tab-pane fade px-4 py-5">
+            <div class="container">
+                <h3>TBA</h3>
             </div>
         </div>
     </div>
 </div></div>
+            </div>
         </div>
     </div>
-    <div>
-        <div class="container"></div>
-    </div>
+    <div></div>
+    <div></div>
     <footer class="page-footer gradient">
         <header></header>
         <div class="container" style="width: 1126px;">
