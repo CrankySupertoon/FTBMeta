@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages>
+
+    <page type="index"
+          id="Pack Index Page"
+          out="index.html"
+          template="index.tmpl.html">
+    </page>
+
+    <page type="pack"
+          id="Pack Page"
+          out="pack/{{.Pack.Slug}}/index.html"
+          template="pack.tmpl.html">
+        <render>
+            <title>{{.Pack.Pack.Name}}</title>
+            <description>{{.Pack.Pack.Synopsis}}</description>
+            <image>{{.Pack.Pack.GetIcon.URL}}</image>
+            <url>/pack/{{.Pack.Slug}}/</url>
+        </render>
+    </page>
+
+    <page type="version"
+          id="Pack Version Page"
+          out="pack/{{.Pack.Slug}}/version/{{.Version.Slug}}/index.html"
+          template="pack_version.tmpl.html">
+        <render>
+            <title>{{.Pack.Pack.Name}} {{.Version.Version.Name}}</title>
+            <description>{{.Pack.Pack.Synopsis}}</description>
+            <image>{{.Pack.Pack.GetIcon.URL}}</image>
+            <url>/pack/{{.Pack.Slug}}/version/{{.Version.Slug}}/</url>
+        </render>
+    </page>
+
+</pages>
