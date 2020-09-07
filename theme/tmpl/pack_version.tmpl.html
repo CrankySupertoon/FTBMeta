@@ -1,13 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="utf-8">
-    <title>{{.CommonData.Title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - FTB Meta</title>
+    <meta name="description" content="Frontend to Modpacks.ch">
+    <link rel="stylesheet" href="../../../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="../../../../assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
 </head>
+
 <body>
-
-<h1>{{.Version.Version.Name}}</h1>
-<pre><code>{{.Version.Changelog}}</code></pre>
-
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="index.html" style="font-size: 27px;">FTB Meta</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <main class="page lanidng-page"></main>
+    <div></div>
+    <div></div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div style="text-align:center;">
+                        <h2 class="divider-style"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 style="padding: 0px;">{{.Pack.Pack.Name}}&nbsp;{{.Version.Version.Name}}<br></h2>
+                </div>
+                <div class="col-xl-3" style="margin: 0px;">
+                    <div class="btn-group"><a class="btn btn-primary" role="button" href="https://api.modpacks.ch/public/modpack/{{.Pack.Pack.ID}}/{{.Version.Version.ID}}" style="font-size: 20px;border-width: 0px;"><strong>Download Modpack&nbsp;</strong></a><a class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-expanded="false" role="button"></a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">This Button Downloads a Manifest<br>that can be imported into specific<br>Tools and Launchers.</a></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div style="margin: 16px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xl-2">
+                    <h3>Uploaded</h3>
+                    <h5>{{.Version.Version.Updated | standardDate}}</h5>
+                </div>
+                <div class="col-md-3 col-xl-1">
+                    <h3>Size</h3>
+                    <h5>0</h5>
+                </div>
+                <div class="col-md-3 col-xl-2">
+                    <h3>Downloads</h3>
+                    <h5>{{ .Version.Version.Installs | humaniseInt }}</h5>
+                </div>
+                <div class="col-xl-2">
+                    <h3>Runs</h3>
+                    <h5>{{ .Version.Version.Plays | humaniseInt }}</h5>
+                </div>
+                <div class="col-xl-5">
+                    <h3>SHA1</h3>
+                    <h5>0</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="margin: 8px;">
+                    <h3>Changelog<br></h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">{{.Version.Changelog | renderMarkdown}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="text-align:center;">
+                        <h2 class="divider-style"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <footer class="page-footer gradient">
+        <header></header>
+        <div class="container" style="width: 1126px;">
+            <footer>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <h4 style="width: 335px;"></h4>
+                            <h4>Copyright © 2020 FTBMeta&nbsp;</h4>
+                        </div>
+                        <div class="col offset-xl-1">
+                            <h4 style="padding: 8px;">Created with ❤ by Cranky Supertoon</h4>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
 </body>
+
 </html>
