@@ -27,31 +27,34 @@
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12" style="padding: 28px;"><div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" style="padding: 28px;">
-
-                <head>
-                    <meta charset="utf-8">
-                    <title>{{.CommonData.Title}}</title>
-                </head>
-
-                <body>
-
-                    <ul>
-                        {{range $pack := .Packs}}
-                        <li><a href="/pack/{{$pack.Slug}}/">{{$pack.Pack.Name}} </a> ID: {{$pack.Pack.ID}}</li>
-                        {{end}}
-                    </ul>
-
-                </body>
+                <div class="col-md-12" style="padding: 28px;"></div>
             </div>
         </div>
     </div>
-</div></div>
+    <div>
+        <div class="container"><div class="row">
+    <div class="col-md-6" style="  margin: 8px;
+">
+        <div>{{range $pack := .Packs}}
+            <div class="box">
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48"><img src="{{$pack.Pack.GetIcon.URL}}"
+                                alt="{{$pack.Pack.Name}} Logo" width="128" height="128" /></figure>
+                    </div>
+                    <div class="col-md-50" style="  margin: 12px;
+">
+                        <div class="media-content">
+                            <div class="content">
+                                <p><a href="/pack/{{ $pack.Slug }}/"><strong> {{$pack.Pack.Name}}</strong></a><br />
+                                    {{$pack.Pack.Synopsis}}
+                                </p>
+                            </div>
+                        </div>
+                </article>
             </div>
-        </div>
+            {{end}}
+        </div></div>
     </div>
     <footer class="page-footer gradient">
         <header></header>
