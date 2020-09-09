@@ -8,6 +8,12 @@ rm index.tmpl.html 2>/dev/null
 rm pack.tmpl.html 2>/dev/null
 rm pack_version.tmpl.html 2>/dev/null
 
+#Remove Old Assets Folder
+rm -rf /theme/static/assets
+
+#Add New Assets Folder
+mv /theme/tmpl/assets /theme/static/assets
+
 #Fix CSS for Exported HTML
 sed -i 's/assets\/bootstrap/..\/..\/assets\/bootstrap/g' pack.html
 sed -i 's/assets\/css/..\/..\/assets\/css/g' pack.html
