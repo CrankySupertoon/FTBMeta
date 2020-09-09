@@ -14,11 +14,13 @@ rm -rf /theme/static/assets
 #Add New Assets Folder
 mv /theme/tmpl/assets /theme/static/assets
 
-#Fix CSS for Exported HTML
+#Fix Assets for Exported HTML
 sed -i 's/assets\/bootstrap/..\/..\/assets\/bootstrap/g' pack.html
 sed -i 's/assets\/css/..\/..\/assets\/css/g' pack.html
+sed -i 's/assets\/img/..\/..\/assets\/img/g' pack.html
 sed -i 's/assets\/bootstrap/..\/..\/..\/..\/assets\/bootstrap/g' pack_version.html
 sed -i 's/assets\/css/..\/..\/..\/..\/assets\/css/g' pack_version.html
+sed -i 's/assets\/img/..\/..\/..\/..\/assets\/img/g' pack_version.html
 
 #Fix Header Links for Exported HTML
 sed -i 's/index.html/..\/..\/index.html/g' pack.html
