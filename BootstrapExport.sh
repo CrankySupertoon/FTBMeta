@@ -14,6 +14,10 @@ sed -i 's/assets\/css/..\/..\/assets\/css/g' pack.html
 sed -i 's/assets\/bootstrap/..\/..\/..\/..\/assets\/bootstrap/g' pack_version.html
 sed -i 's/assets\/css/..\/..\/..\/..\/assets\/css/g' pack_version.html
 
+#Fix Header Links for Exported HTML
+sed -i 's/index.html/..\/..\/index.html/g' pack.html
+sed -i 's/index.html/..\/..\/..\/..\/index.html/g' pack_version.html
+
 #Convert Exported HTML For Use In GoLang
 mv index.html index.tmpl.html 2>/dev/null
 mv pack.html pack.tmpl.html 2>/dev/null
