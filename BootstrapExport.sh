@@ -13,6 +13,7 @@ rm -rf /theme/static/assets
 
 #Add New Assets Folder
 mv /theme/tmpl/assets /theme/static/assets
+mv /theme/tmpl/manifest.json /theme/static/manifest.json
 
 #Fix Assets for Exported HTML
 sed -i 's/assets\/bootstrap/..\/..\/assets\/bootstrap/g' pack.html
