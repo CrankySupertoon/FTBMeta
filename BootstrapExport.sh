@@ -6,7 +6,7 @@ rm theme/tmpl/pack.tmpl.html 2>/dev/null
 rm theme/tmpl/pack_version.tmpl.html 2>/dev/null
 
 #Remove Old Assets Folder
-rm -rf /theme/static/assets
+rm -rf theme/static/
 
 #Add New Assets Folder
 mv theme/tmpl/assets theme/static/
