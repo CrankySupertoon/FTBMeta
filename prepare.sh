@@ -9,7 +9,8 @@ rm theme/tmpl/pack_version.tmpl.html 2>/dev/null
 rm -rf theme/static/
 
 #Add New Assets Folder
-mv theme/tmpl/assets theme/static/
+mkdir theme/static/
+mv theme/tmpl/assets theme/static/assets
 
 #Fix Assets for Exported HTML
 sed -i 's/assets\/bootstrap/..\/..\/assets\/bootstrap/g' "theme/tmpl/pack.html"
