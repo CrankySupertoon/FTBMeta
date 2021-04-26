@@ -13,7 +13,6 @@ help: ## Displays the help dialog
 	@echo '  help           | Shows help'
 
 buildFtbweb: ## Builds ftbweb
-	sh prepare.sh > /dev/null 2>&1 && \
 	cd ftbweb && \
 	go build -o ../bin/generate ./cmd/ftbweb && \
 	go build -o ../bin/serve ./cmd/serve
